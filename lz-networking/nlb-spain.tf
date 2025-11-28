@@ -1,6 +1,6 @@
 # NLB for Direct Connect connections in SPAIN
 module "network_load_balancer_dx_spain" {
-  source = "github.com/LorenzoDTT/aral/network-loadbalancer"
+  source = "github.com/LorenzoDTT/aral.git/network-loadbalancer"
 
   ### Network Load Balancer Module
   naming      = "printer-dx-spain"
@@ -28,7 +28,7 @@ module "network_load_balancer_dx_spain" {
 }
 ## NLB for VPN connections in SPAIN
 module "network_load_balancer_vpn_spain" {
-  source = "github.com/LorenzoDTT/aral/network-loadbalancer"
+  source = "github.com/LorenzoDTT/aral.git/network-loadbalancer"
 
   ### Network Load Balancer Module
   naming      = "printer-vpn-spain"
