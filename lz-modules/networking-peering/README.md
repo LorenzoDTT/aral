@@ -38,7 +38,7 @@ The following resources must exist before the deployment can take place:
 ```hcl
 // Complete with your GHE route module
 module "Peering" {
-  source              = "git::codecommit::us-east-1://lz-modules.git//networking-peering"
+  source              = "github.com/LorenzoDTT/aral//networking-peering"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }
@@ -65,7 +65,7 @@ module "Peering" {
 
 ```hcl
 module "Peering" {
-  source              = "git::codecommit::us-east-1://lz-modules.git//networking-peering"
+  source              = "github.com/LorenzoDTT/aral//networking-peering"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }

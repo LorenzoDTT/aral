@@ -36,7 +36,7 @@ The following resources must exist before the deployment can take place:
 ```hcl
 // Complete with your GHE route module
 module "Transit_Gateway" {
-  source              = "git::codecommit::us-east-1://lz-modules.git//networking-transit-gateway"
+  source              = "github.com/LorenzoDTT/aral//networking-transit-gateway"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }
@@ -56,7 +56,7 @@ module "Transit_Gateway" {
 
 ```hcl
 module "Transit_Gateway" {
-  source              = "git::codecommit::us-east-1://lz-modules.git//networking-transit-gateway"
+  source              = "github.com/LorenzoDTT/aral//networking-transit-gateway"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }

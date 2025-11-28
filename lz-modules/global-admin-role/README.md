@@ -5,7 +5,7 @@ This role can be assumed by the breakglass-admin user from the brealglass access
 This module is called using this code in the main.tf file in each account:
 
 module "global_breakglass_admin_role" {
-  source         = "git::codecommit::us-east-1://lz-modules.git//global-admin-role"
+  source         = "github.com/LorenzoDTT/aral//global-admin-role"
   name           = var.name
   principal_arns = var.principal_arns
   policy_arns    = var.policy_arns

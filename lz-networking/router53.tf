@@ -1,6 +1,6 @@
 # Route53 Private Hosted Zone and Records for NLB
 module "router53_nlb" {
-  source = "git::codecommit::us-east-1://lz-modules.git//network-router53"
+  source = "github.com/LorenzoDTT/aral//network-router53"
 
   ## configuración de Route53 privada
   route53_zone_name = "armandoalvarez.cloud"
