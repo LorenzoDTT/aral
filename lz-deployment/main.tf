@@ -1,6 +1,6 @@
 # Create breakglass admin role in the account
 module "global_breakglass_admin_role" {
-  source         = "github.com/LorenzoDTT/aral//global-admin-role"
+  source         = "github.com/LorenzoDTT/aral.git//global-admin-role"
   name           = var.name
   principal_arns = var.principal_arns
   policy_arns    = var.policy_arns
@@ -8,7 +8,7 @@ module "global_breakglass_admin_role" {
 
 # Set global alernate contacts
 module "alternate_contacts" {
-  source         = "github.com/LorenzoDTT/aral//global-alternate-contacts"
+  source         = "github.com/LorenzoDTT/aral.git//global-alternate-contacts"
   resource_sufix = "alternate-contacts"
 }
 
@@ -16,5 +16,5 @@ module "alternate_contacts" {
 # Pattern 1: Block Public Access in S3 service at account level
 # You can add more security configurations in AWS by the use of this module
 module "lz_security_baseline" {
-  source = "github.com/LorenzoDTT/aral//global-security-baseline"
+  source = "github.com/LorenzoDTT/aral.git//global-security-baseline"
 }

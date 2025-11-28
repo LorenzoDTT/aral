@@ -35,7 +35,7 @@ The following resources must exist before the deployment can take place:
 ```hcl
 // Complete with your GHE route module
 module "Direct_Connect" {
-  source              = "github.com/LorenzoDTT/aral//networking-direct-connect"
+  source              = "github.com/LorenzoDTT/aral.git//networking-direct-connect"
   providers            = { 
     aws.us_east_1 = aws.us_east_1,
     aws.eu_central_1 = aws.eu_central_1,
@@ -79,7 +79,7 @@ module "Direct_Connect" {
 
 ```hcl
 module "Direct_Connect" {
-  source              = "github.com/LorenzoDTT/aral//networking-direct-connect"
+  source              = "github.com/LorenzoDTT/aral.git//networking-direct-connect"
   providers            = { 
     aws.us_east_1 = aws.us_east_1,
     aws.eu_central_1 = aws.eu_central_1,

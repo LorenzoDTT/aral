@@ -4,7 +4,7 @@ This terraform module has been used to create the breakglass-admin user in the b
 
 This module is called in lz-breakglass->main.tf using:
 module "lz_breakglass_admin_user" {
-  source             = "github.com/LorenzoDTT/aral//breakglass-iam-user"
+  source             = "github.com/LorenzoDTT/aral.git//breakglass-iam-user"
   aws_region         = "eu-south-2"
   user_name          = "breakglass-admin"
   attach_policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]

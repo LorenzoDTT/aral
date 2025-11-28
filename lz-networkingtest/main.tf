@@ -1,6 +1,6 @@
 # Create breakglass admin role in the account
 module "global_breakglass_admin_role" {
-  source         = "github.com/LorenzoDTT/aral//global-admin-role"
+  source         = "github.com/LorenzoDTT/aral.git//global-admin-role"
   name           = var.name
   principal_arns = var.principal_arns
   policy_arns    = var.policy_arns
@@ -8,14 +8,14 @@ module "global_breakglass_admin_role" {
 
 # Set global alernate contacts
 module "alternate_contacts" {
-  source         = "github.com/LorenzoDTT/aral//global-alternate-contacts"
+  source         = "github.com/LorenzoDTT/aral.git//global-alternate-contacts"
   resource_sufix = "alternate-contacts"
 }
 
 # # Modulo Transit Gateway Test
 
 # module "Transit_Gateway" {
-#   source              = "github.com/LorenzoDTT/aral//networking-transit-gateway"
+#   source              = "github.com/LorenzoDTT/aral.git//networking-transit-gateway"
 #   providers            = { 
 #     aws.us_east_1 = aws.us_east_1
 #   }
@@ -32,7 +32,7 @@ module "alternate_contacts" {
 # Modulo VPN Test
 
 # module "VPN" {
-#   source              = "github.com/LorenzoDTT/aral//networking-vpn"
+#   source              = "github.com/LorenzoDTT/aral.git//networking-vpn"
 #   providers            = { 
 #     aws.us_east_1 = aws.us_east_1
 #   }
@@ -72,7 +72,7 @@ module "alternate_contacts" {
 # Modulo Peering Test
 
 # module "Peering" {
-#   source                       = "github.com/LorenzoDTT/aral//networking-peering"
+#   source                       = "github.com/LorenzoDTT/aral.git//networking-peering"
 #   providers            = { 
 #     aws.us_east_1 = aws.us_east_1
 #   }
