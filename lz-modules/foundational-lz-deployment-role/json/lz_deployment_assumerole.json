@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::975050020540:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_aral-tf-deployment-foundational_c51327e02a8bc786"
+          ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}

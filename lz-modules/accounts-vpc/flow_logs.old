@@ -1,0 +1,53 @@
+/* 
+resource "aws_flow_log" "workload_cw_logs" {
+  log_destination_type = "cloud-watch-logs"
+  iam_role_arn         = aws_iam_role.flow_logs.arn
+  log_destination      = aws_cloudwatch_log_group.flow_logs.arn
+  traffic_type         = "ALL"
+  vpc_id               = aws_vpc.workload.id
+  depends_on = [
+    aws_cloudwatch_log_group.flow_logs,
+    aws_kms_key.flow_logs
+  ]
+}
+
+resource "aws_flow_log" "workload_s3" {
+  log_destination_type = "s3"
+  log_destination      = var.s3_bucket_arn_vpc_flow_logs
+  traffic_type         = "ALL"
+  vpc_id               = aws_vpc.workload.id
+}
+
+resource "aws_cloudwatch_log_group" "flow_logs" {
+  name              = "vpc-flow-logs"
+  retention_in_days = var.log_group_retention
+  kms_key_id        = aws_kms_key.flow_logs.arn
+}
+
+resource "aws_iam_role" "flow_logs" {
+  name               = "vpc_flow_logs"
+  assume_role_policy = file("${path.module}/templates/iam_assume_role_policy.json")
+}
+
+resource "aws_iam_role_policy" "flow_logs" {
+  name   = "vpc_flow_logs"
+  role   = aws_iam_role.flow_logs.id
+  policy = file("${path.module}/templates/iam_role_policy.json")
+}
+
+resource "aws_kms_key" "flow_logs" {
+  description         = "VPC Flow Logs Log Group"
+  enable_key_rotation = true
+  tags                = { Name = "vpc-flow-logs" }
+  policy = templatefile("${path.module}/templates/kms_policy.json", {
+    account_id = data.aws_caller_identity.context.account_id
+    aws_region = data.aws_region.context.name
+  })
+}
+
+resource "aws_kms_alias" "flow_logs" {
+  name          = "alias/vpc_flow_logs_log_group"
+  target_key_id = aws_kms_key.flow_logs.key_id
+}
+ */
+ 
