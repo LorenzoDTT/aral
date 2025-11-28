@@ -1,5 +1,5 @@
 module "global_breakglass_admin_role" {
-  source         = "github.com/LorenzoDTT/aral.git//global-admin-role"
+  source         = "github.com/LorenzoDTT/aral/global-admin-role"
   name           = var.name
   principal_arns = var.principal_arns
   policy_arns    = var.policy_arns
@@ -7,7 +7,7 @@ module "global_breakglass_admin_role" {
 
 # Set global alernate contacts
 module "alternate_contacts" {
-  source         = "github.com/LorenzoDTT/aral.git//global-alternate-contacts"
+  source         = "github.com/LorenzoDTT/aral/global-alternate-contacts"
   resource_sufix = "alternate-contacts"
 }
 
@@ -15,12 +15,12 @@ module "alternate_contacts" {
 # Pattern 1: Block Public Access in S3 service at account level
 # You can add more security configurations in AWS by the use of this module
 module "lz_security_baseline" {
-  source = "github.com/LorenzoDTT/aral.git//global-security-baseline"
+  source = "github.com/LorenzoDTT/aral/global-security-baseline"
 }
 
 # Budget module #
 module "budgets" {
-  source       = "github.com/LorenzoDTT/aral.git//account-budgets"
+  source       = "github.com/LorenzoDTT/aral/account-budgets"
   budget_name  = var.budget_name
   budget_type  = var.budget_type
   limit_amount = var.limit_amount
@@ -36,14 +36,14 @@ module "budgets" {
 
 # Security controls at organizational level enforced by the use of Control Tower
 module "control_tower_controls" {
-  source   = "github.com/LorenzoDTT/aral.git//management-ct-controls"
+  source   = "github.com/LorenzoDTT/aral/management-ct-controls"
   controls = var.ct_controls
 }
 
 
 # Create Permission Sets
 module "permission_sets" {
-  source    = "github.com/LorenzoDTT/aral.git//management-permission-sets"
+  source    = "github.com/LorenzoDTT/aral/management-permission-sets"
   providers = { aws = aws.us_east_1 }
   permission_sets = [
     {
@@ -168,7 +168,7 @@ module "permission_sets" {
 
 # Assign permission sets to groups and accounts
 module "account-assignmets" {
-  source     = "github.com/LorenzoDTT/aral.git//management-account-assignments"
+  source     = "github.com/LorenzoDTT/aral/management-account-assignments"
   providers  = { aws = aws.us_east_1 }
   depends_on = [module.permission_sets]
   account_assignments = [

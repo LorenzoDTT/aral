@@ -36,7 +36,7 @@ The following resources must exist before the deployment can take place:
 ```hcl
 // Complete with your GHE route module
 module "VPN" {
-  source              = "github.com/LorenzoDTT/aral.git//networking-vpn"
+  source              = "github.com/LorenzoDTT/aral/networking-vpn"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }
@@ -82,7 +82,7 @@ module "VPN" {
 
 ```hcl
 module "VPN" {
-  source              = "github.com/LorenzoDTT/aral.git//networking-transit-gateway"
+  source              = "github.com/LorenzoDTT/aral/networking-transit-gateway"
   providers            = { 
     aws.us_east_1 = aws.us_east_1
   }

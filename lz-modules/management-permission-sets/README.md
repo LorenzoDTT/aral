@@ -17,7 +17,7 @@ They must be created first before you enforce the access to the LZ by group memb
 This module is called from lz-management->main.tf using:
 
 module "permission_sets" {
-  source    = "github.com/LorenzoDTT/aral.git//management-permission-sets"
+  source    = "github.com/LorenzoDTT/aral/management-permission-sets"
   providers = { aws = aws.us_east_1 }
   permission_sets = [
 

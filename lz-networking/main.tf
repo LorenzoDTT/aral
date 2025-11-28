@@ -85,7 +85,7 @@ module "Peering" {
   destination_cidr_block_spain = var.destination_cidr_block_spain
   tgw_route_table_id_spain     = var.tgw_route_table_id_spain
 
- aral.git/######NORTH VIRGINIA#####
+######NORTH VIRGINIA#####
   peer_transit_gateway_id_North_Virginia      = module.Transit_Gateway.transit_gateway_id_North_Virginia
   peer_region_North_Virginia                  = var.peer_region_North_Virginia
   destination_cidr_block_North_Virginia       = var.destination_cidr_block_North_Virginia

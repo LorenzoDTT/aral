@@ -5,7 +5,7 @@ This terraform module can be used as global customization or single customizatio
 This module is called in the main.tf file of the account by using lz-nameoftheaccount->main.tf
 
 module "budgets" {
-  source       = "github.com/LorenzoDTT/aral.git//account-budgets"
+  source       = "github.com/LorenzoDTT/aral/account-budgets"
   budget_name  = var.budget_name
   budget_type  = var.budget_type
   limit_amount = var.limit_amount

@@ -98,7 +98,7 @@ The module needs to be deployed in the management account `lz-management-account
 
 ```
 module "controltower_controls" {
-  source                = "github.com/LorenzoDTT/aral.git//management-ct-controls"
+  source                = "github.com/LorenzoDTT/aral/management-ct-controls"
   controls              = var.ct_controls
 }
 ```

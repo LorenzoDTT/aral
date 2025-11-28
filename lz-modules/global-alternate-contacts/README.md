@@ -12,7 +12,7 @@ https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact
 
 This module is called using this code in the main.tf file in each account:
 module "alternate_contacts" {
-  source         = "github.com/LorenzoDTT/aral.git//global-alternate-contacts"
+  source         = "github.com/LorenzoDTT/aral/global-alternate-contacts"
   resource_sufix = "alternate-contacts"
 }
 
