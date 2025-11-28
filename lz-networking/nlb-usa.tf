@@ -1,6 +1,6 @@
 # NLB for Direct Connect connections in USA
 module "network_load_balancer_dx_usa" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//network-loadbalancer"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/network-loadbalancer"
 
   ### Network Load Balancer Module
   naming      = "printer-dx-usa"
@@ -28,7 +28,7 @@ module "network_load_balancer_dx_usa" {
 }
 ## NLB for VPN connections in USA
 module "network_load_balancer_vpn_usa" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//network-loadbalancer"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/network-loadbalancer"
 
   ### Network Load Balancer Module
   naming      = "printer-vpn-usa"

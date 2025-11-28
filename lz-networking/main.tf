@@ -1,6 +1,6 @@
 # Create breakglass admin role in the account
 module "global_breakglass_admin_role" {
-  source         = "git::https://github.com/LorenzoDTT/aral.git//global-admin-role"
+  source         = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/global-admin-role"
   name           = var.name
   principal_arns = var.principal_arns
   policy_arns    = var.policy_arns
@@ -10,19 +10,19 @@ module "global_breakglass_admin_role" {
 # Pattern 1: Block Public Access in S3 service at account level
 # You can add more security configurations in AWS by the use of this module
 module "lz_security_baseline" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//global-security-baseline"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/global-security-baseline"
 }
 
 
 # Set global alernate contacts
 module "alternate_contacts" {
-  source         = "git::https://github.com/LorenzoDTT/aral.git//global-alternate-contacts"
+  source         = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/global-alternate-contacts"
   resource_sufix = "alternate-contacts"
 }
 
 # Modulo transit Gateway
 module "Transit_Gateway" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//networking-transit-gateway"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/networking-transit-gateway"
   providers = {
     aws.us_east_1 = aws.us_east_1
   }
@@ -38,7 +38,7 @@ module "Transit_Gateway" {
 
 
 module "VPN" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//networking-vpn"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/networking-vpn"
   providers = {
     aws.us_east_1 = aws.us_east_1
   }
@@ -76,7 +76,7 @@ module "VPN" {
 }
 
 module "Peering" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//networking-peering"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/networking-peering"
   providers = {
     aws.us_east_1 = aws.us_east_1
   }
@@ -94,7 +94,7 @@ module "Peering" {
 }
 
 module "Direct_Connect" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//networking-direct-connect"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/networking-direct-connect"
   providers = {
     aws.us_east_1    = aws.us_east_1,
     aws.eu_central_1 = aws.eu_central_1,
@@ -134,7 +134,7 @@ module "Direct_Connect" {
 
 ########################## IPAM POOLS ##########################
 module "network_ipam" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//network-ipam"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/network-ipam"
 
   ipam_regions        = ["eu-south-2", "us-east-1"]
   principal_pool_cidr = ["10.60.0.0/17", "10.60.128.0/17"]
@@ -216,7 +216,7 @@ module "network_ipam" {
 }
 
 module "transit_vpc_sharedservices" {
-  source = "git::https://github.com/LorenzoDTT/aral.git//accounts-vpc"
+  source = "git::https://github.com/LorenzoDTT/aral.git//lz-modules/accounts-vpc"
 
   vpc_name                        = "transit-vpc-small"
   vpc_size                        = "small"
